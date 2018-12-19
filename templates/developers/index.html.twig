@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello{% endblock %}
+
+{% block body %}
+
+<article class="center-block">
+                <div class="card bg-light mb-3" style="max-width: 20rem;">
+                    <div class="card-header">Regenerer la table Transport</div>
+                    <div class="card-body">
+                        <form action="{{path('generate_incident')}}" method="POST">
+                             <button id="load" type="submit" class="btn btn-secondary">Regenerer</button>
+                        </form>
+                        <div id="test">
+
+                        </div>
+                    </div>
+                </div>
+                {% if rep is defined %}
+                {%for disp in rep %}
+                        <p>{{disp.status}}</p>
+                {% endfor %}
+                 {% endif %}
+</article>
+{% endblock %}
+{% block javascripts %}
+    <script>
+    </script>
+{% endblock %}

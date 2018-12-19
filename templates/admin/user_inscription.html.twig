@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme inscriptionUserForm 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+        {{form_start(inscriptionUserForm)}}
+        {{form_widget(inscriptionUserForm)}}
+        <button type="submit" class="btn btn-success">Inscription</button>
+        {{form_end(inscriptionUserForm)}}
+
+{% endblock %}

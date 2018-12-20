@@ -55,7 +55,7 @@ class DevelopersController extends AbstractController
         ];
 
         $opts = stream_context_create($opts);
-        $json_file = json_decode(file_get_contents("https://api.sncf.com/v1/coverage/sncf/disruptions//?since=20181216T200800&count=500", false, $opts), true);
+        $json_file = json_decode(file_get_contents("https://api.sncf.com/v1/coverage/sncf/disruptions//?since=20181220T024314&count=500", false, $opts), true);
         $json_file = $json_file['disruptions'];
         $i=0;
         foreach ($json_file as $disp ) {
@@ -99,7 +99,8 @@ class DevelopersController extends AbstractController
                 }else
                 {
                     $transport->setBrutDelay("DELETED");
-                    $delay->setDelayTime(-1);
+                    $transport->setLine("Trajet supprimé");
+                    $delay->setDelayTime('-1');
                 }
                 $delay->setDelayDay(new \DateTime('now'));
                 //Log en cas de probleme : $logger->info($i."- ".$disp['disruption_id']);

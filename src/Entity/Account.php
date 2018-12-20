@@ -24,7 +24,7 @@ class Account implements UserInterface
 
     //Note pour WayZone remplacé string par json pour l'exportation si vous avez MAriadb puis remettez le,json n'es pas compatible
     /**
-     * @ORM\Column(type="string") 
+     * @ORM\Column(type="json") 
      */
     private $roles = [];
 
@@ -98,7 +98,7 @@ class Account implements UserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_DEVELOPER';
+        $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
     }

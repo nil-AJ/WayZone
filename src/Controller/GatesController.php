@@ -15,7 +15,7 @@ class GatesController extends AbstractController
 {
 
     /**
-     * @Route("/connexion", name="connexion")
+     * @Route("/", name="connexion")
      */
     public function connexion()
     {
